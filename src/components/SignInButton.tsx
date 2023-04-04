@@ -17,7 +17,7 @@ const SignInButton: FC<SignInButtonProps> = ({}) => {
     setIsLoading(true)
 
     try {
-      await signIn('google')
+      await signIn('google', { callbackUrl: '/dashboard' })
     } catch (error) {
       toast({
         title: 'Error signing in with google',
