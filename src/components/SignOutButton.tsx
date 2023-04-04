@@ -12,11 +12,12 @@ interface SignOutButtonProps {
 const SignOutButton: FC<SignOutButtonProps> = ({}) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const signUserOut = async () => {
-    setIsLoading(true)
 
+  const signUserOut = async () => {
     try {
-      await signOut()
+      setIsLoading(true)
+      await signOut({redirect: true, callbackUrl: '/' })
+      
     } catch (error) {
       toast({
         title: 'Error signing in with google',

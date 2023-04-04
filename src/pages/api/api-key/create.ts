@@ -1,4 +1,4 @@
-import { authOptios } from "@/lib/auth";
+import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { CreateApiData } from "@/types/api";
 import { NextApiRequest, NextApiResponse } from "next";
@@ -12,7 +12,7 @@ const handler = async (
   res: NextApiResponse<CreateApiData>
 ) => {
   try {
-    const user = await getServerSession(req, res, authOptios).then(
+    const user = await getServerSession(req, res, authOptions).then(
       (res) => res?.user
     )
 
