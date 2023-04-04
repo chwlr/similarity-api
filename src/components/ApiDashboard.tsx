@@ -1,4 +1,4 @@
-import { authOptios } from "@/lib/auth"
+import { authOptions } from "@/lib/auth"
 import { db } from "@/lib/db"
 import { getServerSession } from "next-auth"
 import { notFound } from "next/navigation"
@@ -9,7 +9,7 @@ import { Input } from "@/ui/Input"
 import Table from "@/components/Table"
 
 const ApiDashboard = async () => {
-  const user = await getServerSession(authOptios)
+  const user = await getServerSession(authOptions)
   if(!user) notFound()
 
   const apiKeys = await db.apiKey.findMany({

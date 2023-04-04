@@ -17,7 +17,7 @@ function getGoogleCredentials() {
   return { clientId, clientSecret }
 }
 
-export const authOptios: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db),
   session: {
     strategy: 'jwt'
