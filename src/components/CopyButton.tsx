@@ -1,6 +1,6 @@
 'use client'
 import { ButtonHTMLAttributes, FC } from 'react'
-import Button from '@/ui/Button'
+import { Button } from './ui/Button'
 import { toast } from './ui/Toast'
 
 interface CopyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
